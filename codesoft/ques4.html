@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 4</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Question 4</h1>
+    <form id="quizForm" action="ques5.html" method="get">
+      <p>4. What is the chemical symbol for water?</p>
+      <label><input type="radio" name="q4" value="H2O"> H2O</label><br>
+      <label><input type="radio" name="q4" value="O2"> O2</label><br>
+      <label><input type="radio" name="q4" value="CO2"> CO2</label><br><br>
+      <button class="nav-button" type="submit">NEXT</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      const q1Answer = new URLSearchParams(window.location.search).get('q1'); // Get answer for q1
+      const q2Answer = new URLSearchParams(window.location.search).get('q2'); // Get answer for q2
+      const q3Answer = new URLSearchParams(window.location.search).get('q3'); // Get answer for q3
+      const selectedAnswer = document.querySelector('input[name="q4"]:checked'); // Get selected answer for q4
+      
+      if (!selectedAnswer) {
+        alert("Please select an answer.");
+        event.preventDefault(); // Prevent form submission if no answer is selected
+        return;
+      }
+
+      const q4Answer = selectedAnswer.value; // Get the value of the selected answer for q4
+      this.action = `ques5.html?q1=${q1Answer}&q2=${q2Answer}&q3=${q3Answer}&q4=${q4Answer}`; // Pass all answers to the next page
+    });
+  </script>
+</body>
+</html>

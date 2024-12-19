@@ -1,0 +1,120 @@
+/* General reset for body and html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background: url('https://t3.ftcdn.net/jpg/09/22/26/26/360_F_922262638_T2jTFVZCXwbzEhiB2uzG2GyWXdDRo7ll.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Centering the quiz container */
+  .quiz-container {
+    background: rgba(255, 255, 255, 0.9); /* Adding slight transparency to the container */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  /* Header style */
+  .quiz-container h1 {
+    color: #0073e6;
+    margin-bottom: 20px;
+  }
+  
+  /* Question styling */
+  .quiz-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  /* Styling radio buttons and labels */
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  /* Styling the navigation buttons */
+  .nav-button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Styling for the result page */
+  .result-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .result-container h1 {
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+  #results {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+  
+  #results p {
+    font-weight: 500;
+  }
+  
+  /* Styling for retake quiz button */
+  .navigation {
+    margin-top: 30px;
+  }
+  
+  .nav-button {
+    background-color: #28a745;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-button:hover {
+    background-color: #218838;
+  }
+  

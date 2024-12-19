@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 2</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Question 2</h1>
+    <form id="quizForm" action="ques3.html" method="get">
+      <p>2. What is the largest ocean on Earth?</p>
+      <label><input type="radio" name="q2" value="Pacific"> Pacific Ocean</label><br>
+      <label><input type="radio" name="q2" value="Atlantic"> Atlantic Ocean</label><br>
+      <label><input type="radio" name="q2" value="Indian"> Indian Ocean</label><br><br>
+      <button class="nav-button" type="submit">NEXT</button>
+    </form>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const q1Answer = urlParams.get('q1'); // Get answer from question 1
+
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      const selectedAnswer = document.querySelector('input[name="q2"]:checked');
+      
+      if (!selectedAnswer) {
+        alert("Please select an answer.");
+        event.preventDefault(); // Prevent form submission if no answer is selected
+        return;
+      }
+
+      const q2Answer = selectedAnswer.value;
+      this.action = `ques3.html?q1=${q1Answer}&q2=${q2Answer}`; // Pass both q1 and q2 answers to next page
+    });
+  </script>
+</body>
+</html>

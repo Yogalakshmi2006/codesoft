@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 5</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Question 5</h1>
+    <form id="quizForm" action="result.html" method="get">
+      <p>5. What is the capital of Japan?</p>
+      <label><input type="radio" name="q5" value="Tokyo"> Tokyo</label><br>
+      <label><input type="radio" name="q5" value="Seoul"> Seoul</label><br>
+      <label><input type="radio" name="q5" value="Beijing"> Beijing</label><br><br>
+      <button class="nav-button" type="submit">Submit Quiz</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      const q1Answer = new URLSearchParams(window.location.search).get('q1');
+      const q2Answer = new URLSearchParams(window.location.search).get('q2');
+      const q3Answer = new URLSearchParams(window.location.search).get('q3');
+      const q4Answer = new URLSearchParams(window.location.search).get('q4');
+      const selectedAnswer = document.querySelector('input[name="q5"]:checked');
+      
+      if (!selectedAnswer) {
+        alert("Please select an answer.");
+        event.preventDefault();
+        return;
+      }
+
+      const q5Answer = selectedAnswer.value;
+      this.action = `result.html?q1=${q1Answer}&q2=${q2Answer}&q3=${q3Answer}&q4=${q4Answer}&q5=${q5Answer}`; // Pass all answers
+    });
+  </script>
+</body>
+</html>

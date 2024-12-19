@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 1</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Question 1</h1>
+    <form id="quizForm" action="ques2.html" method="get">
+      <p>1. Who wrote "Romeo and Juliet"?</p>
+      <label><input type="radio" name="q1" value="Shakespeare"> William Shakespeare</label><br>
+      <label><input type="radio" name="q1" value="Dickens"> Charles Dickens</label><br>
+      <label><input type="radio" name="q1" value="Austen"> Jane Austen</label><br><br>
+      <button class="nav-button" type="submit">NEXT</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      const selectedAnswer = document.querySelector('input[name="q1"]:checked');
+      
+      if (!selectedAnswer) {
+        alert("Please select an answer.");
+        event.preventDefault(); // Prevent form submission if no answer is selected
+        return;
+      }
+
+      const q1Answer = selectedAnswer.value;
+      this.action = `ques2.html?q1=${q1Answer}`; // Pass the answer as query string to the next page
+    });
+  </script>
+</body>
+</html>

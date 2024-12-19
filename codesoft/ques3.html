@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 3</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Question 3</h1>
+    <form id="quizForm" action="ques4.html" method="get">
+      <p>3. Which planet is known as the Red Planet?</p>
+      <label><input type="radio" name="q3" value="Mars"> Mars</label><br>
+      <label><input type="radio" name="q3" value="Venus"> Venus</label><br>
+      <label><input type="radio" name="q3" value="Jupiter"> Jupiter</label><br><br>
+      <button class="nav-button" type="submit">NEXT</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      const q1Answer = new URLSearchParams(window.location.search).get('q1');
+      const q2Answer = new URLSearchParams(window.location.search).get('q2');
+      const selectedAnswer = document.querySelector('input[name="q3"]:checked');
+      
+      if (!selectedAnswer) {
+        alert("Please select an answer.");
+        event.preventDefault();
+        return;
+      }
+
+      const q3Answer = selectedAnswer.value;
+      this.action = `ques4.html?q1=${q1Answer}&q2=${q2Answer}&q3=${q3Answer}`; // Pass all previous answers
+    });
+  </script>
+</body>
+</html>
